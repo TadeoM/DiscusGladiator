@@ -2,6 +2,7 @@ extends Node
 var directions := [Hex.new(1, 0, -1), Hex.new(1, -1, 0), Hex.new(0, -1, 1), 
 				   Hex.new(-1, 0, 01), Hex.new(-1, 1, 0), Hex.new(0, 1, -1)]
 
+# point refers to the hex being oriented such that left and right is flat and top and bottom are points
 var layout_point := Orientation.new(sqrt(3.0), sqrt(3.0) / 2.0, 0.0, 3.0 / 2.0,
 					sqrt(3.0) / 3.0, -1.0 / 3.0, 0.0, 2.0 / 3.0,
 					0.5)
