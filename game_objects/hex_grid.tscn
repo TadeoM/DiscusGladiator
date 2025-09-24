@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://0rpcuadntrt8"]
+
+[ext_resource type="Texture2D" uid="uid://i5w6vdd4gmje" path="res://assets/sprites/tiles/drylands/1-drylands_vulcano.png" id="1_jl74q"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wt1gf"]
+texture = ExtResource("1_jl74q")
+texture_region_size = Vector2i(102, 102)
+
+[sub_resource type="TileSet" id="TileSet_mcdot"]
+tile_shape = 3
+tile_offset_axis = 1
+tile_size = Vector2i(102, 102)
+sources/0 = SubResource("TileSetAtlasSource_wt1gf")
+
+[node name="HexGrid" type="TileMap"]
+tile_set = SubResource("TileSet_mcdot")
+format = 2
