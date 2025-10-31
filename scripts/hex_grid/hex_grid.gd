@@ -2,7 +2,7 @@ extends TileMapLayer
 
 class_name HexGrid
 
-enum Shape {RECTANGLE, TRIANGLE, HEXAGON }
+enum Shape {PARALLELOGRAM,RECTANGLE, TRIANGLE, HEXAGON }
 
 @export var shape := Shape.TRIANGLE
 var grid := Dictionary()
@@ -14,7 +14,7 @@ var point : Point
 
 func _ready():
 	print(length, width)
-	if(shape == Shape.RECTANGLE):
+	if(shape == Shape.PARALLELOGRAM):
 		for q in range(-length,length+1):
 			for r in range(-width, width+1):
 				var newHex = Hex.new(q, r, -q-r)
@@ -23,7 +23,16 @@ func _ready():
 				set_cell(vecPos, 0, Vector2i(3,0))
 	elif(shape == Shape.TRIANGLE):
 		for q in range(0, size+1):
-			for r in range(0, (size - q) + 1):
+			for r in range(size - q, size+1):
+				var newHex = Hex.new(q, r, -q-r)
+				var vecPos := Vector2i(q, r)
+				grid.set(vecPos, newHex)
+				set_cell(vecPos, 0, Vector2i(3,0))
+	elif(shape == Shape.HEXAGON):
+		for q in range(-size, size+1):
+			var r1 = max(-size, -q - size)
+			var r2 = min( size, -q + size)
+			for r in range(r1, r2+1):
 				var newHex = Hex.new(q, r, -q-r)
 				var vecPos := Vector2i(q, r)
 				grid.set(vecPos, newHex)

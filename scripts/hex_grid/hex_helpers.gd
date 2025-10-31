@@ -114,3 +114,6 @@ static func hash_hex(hex: Hex):
 	var r_hash := hash_int(hex.r, hasher)
 	var hashedHex := q_hash + r_hash
 	return hashedHex
+
+static func hex_rotate_left(a: Hex) -> Hex:
+	return Hex.new(-a.s, -a.q, -a.r)
