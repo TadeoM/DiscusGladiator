@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://0rpcuadntrt8"]
+
+[ext_resource type="Texture2D" uid="uid://dii4gm32r74te" path="res://assets/sprites/tiles/grasslandsSpriteSheet.png" id="1_kl3eb"]
+[ext_resource type="Script" uid="uid://b0jyhuyoyeux3" path="res://scripts/hex_grid/hex_grid.gd" id="2_bgbdg"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_osvww"]
+resource_name = "Grasslands"
+texture = ExtResource("1_kl3eb")
+margins = Vector2i(1, 2)
+separation = Vector2i(2, 2)
+texture_region_size = Vector2i(236, 205)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+2:2/0 = 0
+1:2/0 = 0
+0:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+2:3/0 = 0
+0:4/0 = 0
+0:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+2:5/0 = 0
+1:5/0 = 0
+3:0/0 = 0
+3:1/0 = 0
+3:2/0 = 0
+3:3/0 = 0
+3:4/0 = 0
+3:5/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_mcdot"]
+tile_shape = 3
+tile_offset_axis = 1
+tile_size = Vector2i(236, 206)
+sources/1 = SubResource("TileSetAtlasSource_osvww")
+
+[node name="HexGrid" type="TileMapLayer"]
+scale = Vector2(0.5, 0.5)
+tile_set = SubResource("TileSet_mcdot")
+script = ExtResource("2_bgbdg")

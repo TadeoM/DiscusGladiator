@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxix2o0h36xwu"]
+
+[ext_resource type="Script" uid="uid://b0jyhuyoyeux3" path="res://scripts/hex_grid/hex_grid.gd" id="1_ibkli"]
+[ext_resource type="Script" uid="uid://nmyy43j7y30s" path="res://scripts/hex_grid/print_grid.gd" id="2_qbsmt"]
+
+[node name="game" type="Node2D"]
+
+[node name="HexGrid" type="TileMapLayer" parent="."]
+position = Vector2(545, 368)
+script = ExtResource("1_ibkli")
+length = 10
+width = 10
+metadata/_custom_type_script = "uid://b0jyhuyoyeux3"
+
+[node name="Node2D" type="Node2D" parent="HexGrid"]
+script = ExtResource("2_qbsmt")
